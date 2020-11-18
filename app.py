@@ -20,8 +20,8 @@ def make_celery(app):
 
 
 application = app = Flask(__name__)
-app.config['result_backend'] = 'redis://localhost:6379'
-app.config['broker_url'] = 'redis://localhost:6379'
+app.config['result_backend'] = 'redis://lredistest.3mesk0.ng.0001.use2.cache.amazonaws.com:6379'
+app.config['broker_url'] = 'redis://redistest.3mesk0.ng.0001.use2.cache.amazonaws.com:6379'
 celery = make_celery(app)
 
 celery.conf.beat_schedule = {
