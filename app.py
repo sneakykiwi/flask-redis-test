@@ -1,8 +1,6 @@
 from flask import Flask
 from celery import Celery
 from datetime import timedelta
-import requests
-
 
 def make_celery(app):
     celery = Celery(
@@ -21,7 +19,7 @@ def make_celery(app):
     return celery
 
 
-app = Flask(__name__)
+application = app = Flask(__name__)
 app.config['result_backend'] = 'redis://localhost:6379'
 app.config['broker_url'] = 'redis://localhost:6379'
 celery = make_celery(app)
